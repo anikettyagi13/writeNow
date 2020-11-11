@@ -1,0 +1,7 @@
+TODO
+
+1.) html text not rendering
+2.) input be allowed
+3.) images be allowed
+4.) showBlog for smaller screen
+5.) user data for slowBlog
