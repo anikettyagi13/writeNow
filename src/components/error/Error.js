@@ -1,6 +1,7 @@
 import React from 'react'
 
 function Error(props){
+    document.title="writeNow"
     return(
         <div style={{height:'100%',width:'100%',textAlign:'center',display:'flex',alignItems:'center',alignContent:'center',justifyContent:'center',flexWrap:'wrap'}}>
             <div style={{fontSize:'40px',fontWeight:'bold',color:'#121212',width:'100%'}}>404</div>

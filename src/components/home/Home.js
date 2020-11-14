@@ -10,7 +10,7 @@ function Home(props){
     const [isLoading,setIsLoading]=useState(false)
 
     useEffect(()=>{
-        document.title="BLOGGINGISTA"
+        document.title="writeNow"
         if(props.homeBlogs.length===0){
             getMoreBlogs()
         }else{

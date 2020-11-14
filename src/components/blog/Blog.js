@@ -31,7 +31,7 @@ const linkIndex={}
   const [picFileName,setPicFileName] = useState('')
   const [introImage,setIntroImage] = useState({})
   const [user,setUser] = useState('')
-  document.title="BLOGGINGISTA"
+  document.title="writeNow"
   useEffect(()=>{
     const u =checkIfLoggedIn()
   },[])

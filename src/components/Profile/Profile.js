@@ -17,7 +17,7 @@ function Profile(props){
     const [likedProfile,setLikedProfile]=useState(false)
     const [hasMore,setHasMore] = useState(true)
     const [error,setError] = useState(false)
-    document.title="BLOGGINGISTA"
+    document.title="writeNow"
     useEffect(()=>{
         let location = window.location.href.split('/')[4]
         if(props.loggedUser&&(!location||location===props.loggedUser.uid)){

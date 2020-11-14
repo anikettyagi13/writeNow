@@ -84,7 +84,7 @@ function ShowBlog({firebase}){
                     return <div key={index} className="blog_show" style={{margin:'auto',marginTop:'20px',marginBottom:'20px',borderRadius:'10px'}}><img src={splited[5]} style={{margin:'auto',width:'100%',maxHeight:'500px',minHeight:'200px',backgroundColor:'#ddd',marginTop:'10px',marginBottom:'10px'}} /><span style={{width:'100%',display:'block',lineHeight:'1.6',marginTop:'-10px',color:`#${splited[2]}`,fontSize:`${splited[3]}px`,fontFamily:`${splited[1]}`}} dangerouslySetInnerHTML={{__html:`${splited[4]}`}} /><br></br> </div>
                   }
                 })
-                document.title=data.title?data.title+" - BLOGGINGISTA":"BLOGGINGISTA"
+                document.title=data.title?data.title+" - writeNow":"writeNow"
               setBlogData(blog)
               setLoading(false);
   
