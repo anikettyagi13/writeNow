@@ -54,13 +54,13 @@ import {validPassword,validEmail,validName} from '../../utils/validation'
             }
             if(isValidEmail&&isValidPassword&&isValidName&&password===confirmPassword){
                 const user=await firebase.signUp(email,password,name);
-                window.location.replace(`/${something}/login`)
+                window.location.replace(`${something}/login`)
             }
         }catch(e){
             setErrorMessage(e.message)
         }finally{
             if(password===confirmPassword){
-                setConfirmPasswordError(true)
+                setConfirmPasswordError(false)
             }
             setEmailError(!isValidEmail);
             setPasswordError(!isValidPassword);

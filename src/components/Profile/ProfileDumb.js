@@ -60,7 +60,11 @@ function ProfileDumb(props){
             <div className="userInfo">
                 <div className="profilePic">
                 {image?<img src={image}></img>:
-                <img src={props.userData.profilePic} />                
+                <>
+                {props.userData.profilePic?
+                <img src={props.userData.profilePic} />
+                : <img></img>}
+                </>                
                 }
                 {props.isSameProfile?
                 <div><NavLink to="/notification" style={{display:'none'}} ref={(input)=>{notificationClick=input}} />

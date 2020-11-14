@@ -25,12 +25,16 @@ function Home(props){
             var newBlog = [...blogs];
             if(postDoc.length===0){
                 setMoreData(false)
+                setIsLoading(false)
+            }else if(postDoc.length<=10){
+                console.log(postDoc)
+                newBlog.push(...postDoc);
+                props.setHomeBlogs(newBlog)
+                setBlogs(newBlog);
+                setIsLoading(false)
+                setCreatedAt(newBlog[newBlog.length-1].createdAt)
             }
-            newBlog.push(...postDoc);
-            props.setHomeBlogs(newBlog)
-            setBlogs(newBlog);
-            setIsLoading(false)
-            setCreatedAt(newBlog[newBlog.length-1].createdAt)
+            
     }
     const showBlog=(index)=>{
         return(

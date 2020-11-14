@@ -25,9 +25,8 @@ function Profile(props){
             setIsSameProfile(true)
             setUseruid(props.loggedUser.uid)
             setUserData(props.loggedUser);
-            setBlogs(props.profileBlogs)
-            setCreatedAt(props.profileBlogs[props.profileBlogs.length-1].createdAt)
-
+            setBlogs(props.profileBlogs?props.profileBlogs:[])
+            setCreatedAt(props.profileBlogs.length>0?props.profileBlogs[props.profileBlogs.length-1].createdAt:[])
         }else{
             getUserInfo(location)
         }

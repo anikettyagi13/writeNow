@@ -9,6 +9,7 @@ function Notification(props){
     const [no,setNo]=useState([])
     const [loading,setLoading]=useState(false)
     const [loginShow,setLoginShow]=useState(false)
+    console.log(notification,no)
     useEffect(()=>{
         if(props.notification.length===0){
             getNotifications();
@@ -20,8 +21,9 @@ function Notification(props){
         if(props.user){
             let noti = await props.firebase.getNotifications(props.user.uid)
             noti = noti.data()
-            setNo(noti.notification)
-            let k = noti.notification.slice(0,notification.length+10)
+            console.log(noti.notification)
+            setNo(noti.notification?noti.notification:[])
+            let k = noti.notification?noti.notification.slice(0,10):[]
             setNotification(k)
             setTimeout(() => {
                 setLoading(false)
