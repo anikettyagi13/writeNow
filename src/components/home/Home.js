@@ -27,7 +27,6 @@ function Home(props){
                 setMoreData(false)
                 setIsLoading(false)
             }else if(postDoc.length<=10){
-                console.log(postDoc)
                 newBlog.push(...postDoc);
                 props.setHomeBlogs(newBlog)
                 setBlogs(newBlog);
