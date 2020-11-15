@@ -355,9 +355,9 @@ function ShowBlog({firebase}){
             </div>
             </div>
             :
-            <div>
+            <div style={{height:'100vh',width:'100vw'}}>
               {loginShow?
-              <div style={{width:'100vh'}}><div style={{top:'50px',width:'100%',height:'55px',background: '#222222',boxShadow: '0 0 24px rgba(0, 0, 0, 0.25), 0 10px 10px rgba(0, 0, 0, 0.22)',position:'fixed',display:'flex',justifyContent:'flex-end',alignItems:'center'}} ><div style={{marginRight:'30px'}} className="border_wrap1"><button style={{float:'right',padding:'10px 20px'}} className="edit_click_button" onClick={()=>{setLoginShow(false)}}>Close</button></div> </div><Login /></div>
+              <div style={{width:'100%'}}><div style={{top:'50px',width:'100%',height:'55px',background: '#222222',boxShadow: '0 0 24px rgba(0, 0, 0, 0.25), 0 10px 10px rgba(0, 0, 0, 0.22)',position:'fixed',display:'flex',justifyContent:'flex-end',alignItems:'center'}} ><div style={{marginRight:'30px'}} className="border_wrap1"><button style={{float:'right',padding:'10px 20px'}} className="edit_click_button" onClick={()=>{setLoginShow(false)}}>Close</button></div> </div><div style={{width:'100%',float:'left'}}><Login /></div></div>
             :<div style={{}}>
               {error?
               <Error errorName="blog"></Error>

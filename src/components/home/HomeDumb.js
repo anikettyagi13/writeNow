@@ -51,7 +51,7 @@ function HomeDumb(props){
                 )
             })}
             </div>
-            {props.moreData?null:<div><p style={{margin:'auto',textAlign:'center',color:'#ff0033',fontSize:'18px'}}>NO BLOG FOUND</p>
+            {props.moreData?null:<div><p style={{margin:'auto',textAlign:'center',color:'#ff0033',fontSize:'18px'}}>NO MORE BLOG FOUND</p>
             <p style={{margin:'auto',textAlign:'center',color:'#82b1ad',fontSize:'20px'}}>Write A Blog? <NavLink to="write-blog">CLICK HERE</NavLink></p>
             </div>}
             <div className="profileButton" style={{marginBottom:'60px'}}>

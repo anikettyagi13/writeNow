@@ -124,7 +124,7 @@ function Saved(props){
                 )
             })}
             </div>
-            {moreData?null:<div><p style={{margin:'auto',textAlign:'center',color:'#ff0033',fontSize:'18px'}}>NO SAVED BLOG FOUND</p>
+            {moreData?null:<div><p style={{margin:'auto',textAlign:'center',color:'#ff0033',fontSize:'18px'}}>NO MORE SAVED BLOG FOUND</p>
             <br />
             <p style={{margin:'auto',textAlign:'center',color:'#82b1ad',fontSize:'20px'}}>Read A Blog? <NavLink to="/">CLICK HERE</NavLink></p>
             </div>}
