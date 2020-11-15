@@ -18,7 +18,6 @@ const Firebase = {
   login:async(email,password,)=>{
      const k = await firebase.auth().signInWithEmailAndPassword(email, password);
      if(k.emailVerified){
-
       const href =window.location.href
       let splited =href.split('/');
       if( splited[3]!=='login'&&splited[3]!=='signup'){

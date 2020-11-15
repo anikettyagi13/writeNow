@@ -26,7 +26,7 @@ function Login({firebase}){
         if(user){
             const href =window.location.href
             let splited =href.split('/');
-            if( splited[3]!=='login'&&splited[3!=='signup']){
+            if( splited[3]!=='login'&&splited[3]!=='signup'){
                 if(splited[3]==="blog"){
                     window.location.href = `blog/${splited[4]}`
                 }else if(splited[3]==="profile"){
@@ -56,11 +56,12 @@ function Login({firebase}){
                 if(user&&user.emailVerified){
                     const href =window.location.href
                     let splited =href.split('/');
-                    if( splited[3]!=='login'&&splited[3!=='signup']){
+
+                    if( splited[3]!=='login'&&splited[3]!=='signup'){
                         if(splited[3]==="blog"){
-                            window.location.href = `blog/${splited[4]}`
+                            window.location.href = `/blog/${splited[4]}`
                         }else if(splited[3]==="profile"){
-                            window.location.href = `profile/${splited[4]}`
+                            window.location.href = `/profile/${splited[4]}`
                         }else{
                             window.location.href = `/${splited[3]}`
                         }
