@@ -66,7 +66,7 @@ const Firebase = {
       })
     }
     
-    if(!data){
+    if(!data.name){
       const data ={uid:res.user.uid,name:res.user.displayName,email:res.user.email,likes:0,bookmark:0,blogs:0,profilePic:res.user.photoURL};
       await firebase
       .firestore()
