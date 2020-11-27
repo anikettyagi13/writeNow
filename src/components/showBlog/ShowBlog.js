@@ -36,6 +36,7 @@ function ShowBlog({firebase}){
               setLoading(false)
             }else{
               setFullBlog(data);
+              await firebase.increaseViewCount(postUID)
               let user = await firebase.getUserInfo(data.uid);
               let k = user.data()
               setNotification(k.notification?k.notification:[])

@@ -106,20 +106,26 @@ function Saved(props){
             {loginShow?
               <div style={{width:'100vh'}}><div style={{top:'50px',width:'100%',height:'55px',background: '#222222',boxShadow: '0 0 24px rgba(0, 0, 0, 0.25), 0 10px 10px rgba(0, 0, 0, 0.22)',position:'fixed',display:'flex',justifyContent:'flex-end',alignItems:'center'}} ><div style={{marginRight:'30px'}} className="border_wrap1"><button style={{float:'right',padding:'10px 20px'}} className="edit_click_button" onClick={()=>{setLoginShow(false)}}>Close</button></div> </div><Login /></div>
             :
-            <div style={{backgroundColor:'#ddd',height:'100vh',width:'100vw',overflowY:'auto'}}>
-            <div className="home" style={{overflowY:'visible',backgroundColor:'#ddd'}}>
+            <div style={{height:'100vh',width:'100vw',overflowY:'auto'}}>
+            <div className="home" style={{overflowY:'visible'}}>
                 {blogs.map((blog,index)=>{
                 return(
                     <div className="home_blog_show" key={index}>
-                        <div style={{height:'300px',backgroundColor:'black',width:'300px'}} className="image_home_blog"></div>
-                        <img src={blog.titleImage} className="image_home_blog" style={{position:'absolute',top:'0px'}}></img>
-                        <span style={{margin:'10px',lineHeight:'1.6',marginTop:'-300px',fontSize:'18px',display:'block',color:'#fff',fontWeight:'bold',backgroundColor:'#505050',height:'290px'}}>{showBlogData(blog.blogData)}</span>
-                        <div  style={{top:'240px',left:'180px',position:'absolute',display:'flex',justifyContent:'center',margin:'auto',textAlign:'center'}} className="border_wrap">
-                        <NavLink to={`/blog/${blog.postUid}`} ref={input => inputElement[index] = input} style={{display:'none'}}></NavLink>
-                        <button className="edit_click_button" onClick={()=>inputElement[index].click()}>Show Blog</button>
+                        <div style={{position:'absolute',width:'100%'}} >
+                        <span style={{position: 'absolute',top:'0px',display:'flex',margin:'auto',color:'#212121',fontWeight:'bold',margin:'10px',justifyContent:'center',textAlign:'center',fontSize:'16px'}}>{blog.title.toUpperCase().substring(0,20)}{blog.title.length>20?<spnan>...</spnan>:null}</span>
+                        <div style={{position:'absolute',right:'10px',fontSize:'10px',textAlign:'center',display:'flex',justifyContent:'center'}}>
+                        <span style={{position:'absolute',top:'10px',fontSize:'10px',right:'10px'}}>{blog.views}</span>
+                        <span className="material-icons" style={{position:'absolute',top:'18px',right:'5px',fontSize:'16px'}}>visibility</span>
                         </div>
-                        <div  style={{top:'240px',left:'180px',position:'absolute',display:'flex',justifyContent:'center',margin:'auto',textAlign:'center',backgroundColor:'black'}} className=" show_sometime"></div>
-                        <span style={{position: 'absolute',bottom: '10px',display:'flex',margin:'auto',color:'#fff',fontWeight:'bold',margin:'10px',justifyContent:'center'}}>{blog.title.toUpperCase().substring(0,20)}...</span>
+                        <div style={{height:'350px',backgroundColor:'#ddd',width:'100%'}} className="image_home_blog"></div>
+                        <img src={blog.titleImage}  style={{position:'absolute',top:'0px',width:'100%'}} className="image_home_blog"></img>
+                        <span style={{lineHeight:'1.6',fontSize:'15px',display:'block',color:'#212121',fontWeight:'bold',backgroundColor:'#fafafa',height:'120px',overflowY:'auto',position:'absolute',top:'340px',width:'100%'}} className="showSomeDataBlog">{showBlogData(blog.blogData)}</span>
+                        <div  style={{top:'270px',left:'60%',position:'absolute',display:'flex',justifyContent:'center',margin:'auto',textAlign:'center'}} className="border_wrap show_sometime">
+                        <NavLink to={`/blog/${blog.postUid}`} ref={input => inputElement[index] = input} style={{display:'none'}}></NavLink>
+                        <button className="edit_click_button " onClick={()=>inputElement[index].click()}>Show Blog</button>
+                        </div>
+                        <div  style={{top:'270px',left:'60%',position:'absolute',display:'flex',justifyContent:'center',margin:'auto',textAlign:'center',backgroundColor:'#ddd',width:'100px',height:'70px'}} className="showNow"></div>
+                        </div>
                     </div>
                 )
             })}

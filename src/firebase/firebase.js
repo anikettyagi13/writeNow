@@ -93,6 +93,13 @@ const Firebase = {
     console.log(error.message)
   })
   },
+  increaseViewCount:async(postUID)=>{
+    await firebase
+         .firestore()
+         .collection("blog")
+         .doc(postUID)
+         .update({views:firebase.firestore.FieldValue.increment(1)})
+  },
   signout:async()=>{
     return await firebase.auth().signOut();
   },
@@ -101,6 +108,7 @@ const Firebase = {
   },
   saveABlog:async(postUID,uid,blog,useruid)=>{
     blog.savedAt = Date.now()
+    blog.views=0
     await firebase
         .firestore()
         .collection("users")
